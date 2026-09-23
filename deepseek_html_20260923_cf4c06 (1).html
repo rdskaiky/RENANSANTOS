@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070707" />
+  <meta name="description" content="RESETBRASIL — página independente para conhecer Renan Santos, o Partido Missão, o Livro Amarelo e as fontes oficiais." />
+  <meta name="keywords" content="Renan Santos, Partido Missão, RESETBRASIL, Livro Amarelo, MBL, eleições 2026, Brasil" />
+  <meta name="author" content="RESETBRASIL" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="RESETBRASIL | Renan Santos e Partido Missão" />
+  <meta property="og:description" content="Informação, propostas e fontes sobre Renan Santos e o Partido Missão em um só lugar." />
+  <meta property="og:image" content="https://i.pinimg.com/736x/f4/e0/a4/f4e0a4ffaa5cea881f657a9bf71eb982.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RESETBRASIL | Renan Santos e Partido Missão" />
+  <meta name="twitter:description" content="Informação, propostas e fontes sobre Renan Santos e o Partido Missão." />
+  <meta name="twitter:image" content="https://i.pinimg.com/736x/f4/e0/a4/f4e0a4ffaa5cea881f657a9bf71eb982.jpg" />
+
+  <title>RESETBRASIL | Renan Santos e Partido Missão</title>
+
+  <!-- Favicon inline (SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ffd400'/%3E%3Ctext x='50' y='70' font-size='62' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23070707'%3ER%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    /* ============================================================
+       01. VARIÁVEIS GLOBAIS
+       ============================================================ */
+    :root{
+      --bg:#070707;
+      --bg-2:#0d0d0d;
+      --bg-3:#101010;
+      --card:#111111;
+      --card-2:#171717;
+      --card-3:#1c1c1c;
+
+      --yellow:#ffd400;
+      --yellow-2:#ffea62;
+      --yellow-3:#c9a800;
+      --yellow-soft:rgba(255,212,0,.12);
+      --yellow-line:rgba(255,212,0,.25);
+
+      --text:#f5f5f5;
+      --text-2:#d0d0d0;
+      --muted:#aaa;
+      --muted-2:#8e8e8e;
+      --muted-3:#777;
+      --muted-4:#555;
+
+      --line:#2a2a2a;
+      --line-2:#1d1d1d;
+      --line-3:rgba(255,255,255,.06);
+
+      --max:1180px;
+      --max-wide:1320px;
+      --radius:22px;
+      --radius-sm:14px;
+      --radius-lg:30px;
+      --gutter:40px;
+
+      --shadow-sm:0 6px 18px rgba(0,0,0,.28);
+      --shadow-md:0 18px 40px rgba(0,0,0,.35);
+      --shadow-lg:0 40px 80px rgba(0,0,0,.45);
+      --shadow-yellow:0 10px 35px rgba(255,212,0,.15);
+
+      --t-fast:.16s ease;
+      --t:.22s ease;
+      --t-slow:.42s cubic-bezier(.22,.61,.36,1);
+
+      --font:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    /* ============================================================
+       02. RESET E BASE
+       ============================================================ */
+    *,
+    *::before,
+    *::after{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
+      scroll-padding-top:96px;
+    }
+
+    body{
+      margin:0;
+      font-family:var(--font);
+      font-size:16px;
+      color:var(--text);
+      line-height:1.65;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(255,212,0,.12), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(255,212,0,.06), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(255,212,0,.04), transparent 30%),
+        var(--bg);
+      background-attachment:fixed;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+      height:auto;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+      transition:color var(--t-fast);
+    }
+
+    button{
+      font-family:inherit;
+      cursor:pointer;
+      border:none;
+      background:none;
+      color:inherit;
+    }
+
+    input,
+    textarea,
+    select{
+      font-family:inherit;
+      font-size:1rem;
+    }
+
+    ul,
+    ol{
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+      margin:0;
+      font-weight:900;
+      line-height:1.05;
+    }
+
+    p{
+      margin:0 0 1rem;
+    }
+
+    ::selection{
+      background:var(--yellow);
+      color:#090909;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar{
+      width:10px;
+    }
+    ::-webkit-scrollbar-track{
+      background:#0a0a0a;
+    }
+    ::-webkit-scrollbar-thumb{
+      background:#2c2c2c;
+      border-radius:99px;
+      border:2px solid #0a0a0a;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+      background:var(--yellow-3);
+    }
+
+    /* ============================================================
+       03. UTILITÁRIOS
+       ============================================================ */
+    .container{
+      width:min(var(--max), calc(100% - var(--gutter)));
+      margin-inline:auto;
+    }
+
+    .container-wide{
+      width:min(var(--max-wide), calc(100% - var(--gutter)));
+      margin-inline:auto;
+    }
+
+    .text-yellow{color:var(--yellow)}
+    .text-muted{color:var(--muted)}
+    .text-center{text-align:center}
+    .mt-0{margin-top:0}
+    .mb-0{margin-bottom:0}
+
+    .divider{
+      height:1px;
+      background:linear-gradient(90deg, transparent, var(--line), transparent);
+      border:0;
+      margin:0;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    /* ============================================================
+       04. BARRA DE PROGRESSO DE LEITURA
+       ============================================================ */
+    .scroll-progress{
+      position:fixed;
+      top:0;
+      left:0;
+      height:3px;
+      width:0%;
+      background:linear-gradient(90deg, var(--yellow-3), var(--yellow), var(--yellow-2));
+      z-index:999;
+      transition:width .1s linear;
+      box-shadow:0 0 12px rgba(255,212,0,.6);
+    }
+
+    /* ============================================================
+       05. TOPBAR E NAVEGAÇÃO
+       ============================================================ */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:900;
+      background:rgba(7,7,7,.82);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line-3);
+      transition:background var(--t), border-color var(--t);
+    }
+
+    .topbar.is-scrolled{
+      background:rgba(7,7,7,.95);
+      border-bottom-color:var(--line);
+    }
+
+    nav.navbar{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:2px;
+      font-weight:1000;
+      letter-spacing:-1.5px;
+      font-size:1.45rem;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .brand span{
+      color:var(--yellow);
+    }
+
+    .brand-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--yellow);
+      margin-left:6px;
+      box-shadow:0 0 14px var(--yellow);
+      animation:pulseDot 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.45;transform:scale(.82)}
+    }
+
+    .navlinks{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      color:var(--text-2);
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .navlinks a{
+      position:relative;
+      padding:6px 0;
+    }
+
+    .navlinks a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:0;
+      height:2px;
+      background:var(--yellow);
+      transition:width var(--t);
+      border-radius:2px;
+    }
+
+    .navlinks a:hover{
+      color:var(--yellow);
+    }
+
+    .navlinks a:hover::after,
+    .navlinks a.is-active::after{
+      width:100%;
+    }
+
+    .navlinks a.is-active{
+      color:var(--yellow);
+    }
+
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:5px;
+      background:#0e0e0e;
+    }
+
+    .menu-toggle span{
+      display:block;
+      width:20px;
+      height:2px;
+      background:var(--yellow);
+      border-radius:2px;
+      transition:transform var(--t), opacity var(--t);
+    }
+
+    .menu-toggle.is-open span:nth-child(1){
+      transform:translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.is-open span:nth-child(2){
+      opacity:0;
+    }
+    .menu-toggle.is-open span:nth-child(3){
+      transform:translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu{
+      display:none;
+      overflow:hidden;
+      max-height:0;
+      transition:max-height var(--t-slow);
+      border-bottom:1px solid transparent;
+    }
+
+    .mobile-menu.is-open{
+      max-height:420px;
+      border-bottom-color:var(--line);
+    }
+
+    .mobile-menu ul{
+      padding:12px 0 22px;
+      display:grid;
+      gap:4px;
+    }
+
+    .mobile-menu a{
+      display:block;
+      padding:12px 4px;
+      font-weight:800;
+      color:var(--text-2);
+      border-bottom:1px solid var(--line-2);
+    }
+
+    .mobile-menu a:hover{
+      color:var(--yellow);
+      padding-left:10px;
+    }
+
+    /* ============================================================
+       06. BOTÕES
+       ============================================================ */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:.95rem;
+      border:1px solid var(--yellow);
+      transition:transform var(--t), background var(--t), color var(--t), box-shadow var(--t);
+      white-space:nowrap;
+      text-align:center;
+    }
+
+    .btn-primary{
+      background:var(--yellow);
+      color:#090909;
+      box-shadow:var(--shadow-yellow);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      background:var(--yellow-2);
+      box-shadow:0 16px 44px rgba(255,212,0,.28);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      color:var(--yellow);
+    }
+
+    .btn-ghost:hover{
+      background:rgba(255,212,0,.08);
+      transform:translateY(-2px);
+    }
+
+    .btn-dark{
+      background:#111;
+      color:#fff;
+      border-color:#111;
+    }
+
+    .btn-dark:hover{
+      background:#000;
+      transform:translateY(-2px);
+    }
+
+    .btn-sm{
+      min-height:40px;
+      padding:0 16px;
+      font-size:.85rem;
+    }
+
+    .btn-block{
+      width:100%;
+    }
+
+    /* ============================================================
+       07. HERO
+       ============================================================ */
+    .hero{
+      padding:95px 0 70px;
+      min-height:82vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:-10%;
+      top:20%;
+      width:520px;
+      height:520px;
+      background:radial-gradient(circle, rgba(255,212,0,.08), transparent 70%);
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:55px;
+      align-items:center;
+      width:100%;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      color:#111;
+      background:var(--yellow);
+      padding:7px 14px;
+      border-radius:999px;
+      font-weight:1000;
+      font-size:.76rem;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#111;
+      animation:pulseDot 1.8s ease-in-out infinite;
+    }
+
+    h1.hero-title{
+      font-size:clamp(3.25rem, 8vw, 7rem);
+      line-height:.88;
+      letter-spacing:-.075em;
+      margin:24px 0 22px;
+      max-width:900px;
+    }
+
+    h1.hero-title .yellow{
+      color:var(--yellow);
+      display:inline-block;
+    }
+
+    .lead{
+      font-size:1.12rem;
+      color:#c2c2c2;
+      max-width:700px;
+      margin:0 0 30px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .hero-note{
+      margin-top:18px;
+      color:var(--muted-3);
+      font-size:.83rem;
+      max-width:560px;
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+    }
+
+    .hero-note svg{
+      flex-shrink:0;
+      margin-top:3px;
+    }
+
+    /* ============================================================
+       08. POSTER / FOTO
+       ============================================================ */
+    .poster{
+      position:relative;
+      min-height:560px;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      border:1px solid var(--yellow-line);
+      box-shadow:var(--shadow-lg);
+      background:#0b0b0b;
+      isolation:isolate;
+    }
+
+    .poster-img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 22%;
+      filter:grayscale(8%) contrast(1.06) brightness(.9);
+      transform:scale(1.02);
+      transition:transform 6s ease, filter var(--t-slow);
+    }
+
+    .poster:hover .poster-img{
+      transform:scale(1.07);
+      filter:grayscale(0%) contrast(1.1) brightness(.95);
+    }
+
+    .poster::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(150deg, rgba(255,212,0,.92), rgba(255,212,0,.30) 24%, transparent 58%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(7,7,7,.55) 55%, rgba(7,7,7,.94) 100%);
+      pointer-events:none;
+      z-index:2;
+    }
+
+    .poster::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:repeating-linear-gradient(135deg, transparent 0 24px, rgba(255,255,255,.025) 24px 25px);
+      pointer-events:none;
+      z-index:3;
+    }
+
+    .poster-number{
+      position:absolute;
+      right:22px;
+      top:10px;
+      font-size:9rem;
+      font-weight:1000;
+      color:rgba(0,0,0,.28);
+      line-height:1;
+      z-index:4;
+      letter-spacing:-.06em;
+    }
+
+    .poster-badge{
+      position:absolute;
+      left:26px;
+      top:26px;
+      z-index:4;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(7,7,7,.72);
+      border:1px solid var(--yellow-line);
+      color:var(--yellow);
+      font-size:.72rem;
+      font-weight:1000;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:7px 12px;
+      border-radius:999px;
+      backdrop-filter:blur(8px);
+    }
+
+    .poster-copy{
+      position:absolute;
+      left:34px;
+      bottom:35px;
+      right:34px;
+      z-index:4;
+    }
+
+    .poster-copy small{
+      font-weight:1000;
+      color:#111;
+      background:var(--yellow);
+      padding:6px 11px;
+      border-radius:8px;
+      font-size:.72rem;
+      letter-spacing:.08em;
+      display:inline-block;
+      text-transform:uppercase;
+    }
+
+    .poster-copy h2{
+      font-size:3rem;
+      line-height:.98;
+      margin:16px 0 10px;
+      letter-spacing:-.05em;
+      color:#fff;
+      text-shadow:0 4px 24px rgba(0,0,0,.6);
+    }
+
+    .poster-copy p{
+      color:#d2d2d2;
+      margin:0;
+      max-width:430px;
+      font-size:.95rem;
+      text-shadow:0 2px 12px rgba(0,0,0,.7);
+    }
+
+    .poster-credit{
+      position:absolute;
+      right:22px;
+      bottom:18px;
+      z-index:4;
+      font-size:.68rem;
+      color:rgba(255,255,255,.45);
+      letter-spacing:.04em;
+    }
+
+    /* ============================================================
+       09. MARQUEE
+       ============================================================ */
+    .marquee{
+      border-top:1px solid var(--line-2);
+      border-bottom:1px solid var(--line-2);
+      background:#0a0a0a;
+      overflow:hidden;
+      padding:16px 0;
+      position:relative;
+    }
+
+    .marquee-track{
+      display:flex;
+      gap:44px;
+      width:max-content;
+      animation:marquee 32s linear infinite;
+    }
+
+    .marquee:hover .marquee-track{
+      animation-play-state:paused;
+    }
+
+    .marquee-item{
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      font-weight:1000;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:.85rem;
+      color:#5c5c5c;
+      white-space:nowrap;
+    }
+
+    .marquee-item span{
+      color:var(--yellow);
+    }
+
+    @keyframes marquee{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
+
+    /* ============================================================
+       10. SEÇÕES GENÉRICAS
+       ============================================================ */
+    section{
+      padding:88px 0;
+    }
+
+    .section-kicker{
+      color:var(--yellow);
+      font-weight:1000;
+      letter-spacing:.12em;
+      font-size:.8rem;
+      text-transform:uppercase;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .section-kicker::before{
+      content:"";
+      width:26px;
+      height:2px;
+      background:var(--yellow);
+      border-radius:2px;
+    }
+
+    .section-title{
+      font-size:clamp(2.2rem, 5vw, 4rem);
+      line-height:1;
+      letter-spacing:-.05em;
+      margin:12px 0 18px;
+    }
+
+    .section-copy{
+      max-width:780px;
+      color:#b9b9b9;
+      font-size:1.02rem;
+    }
+
+    /* ============================================================
+       11. STATS
+       ============================================================ */
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:14px;
+      margin-top:38px;
+    }
+
+    .stat{
+      padding:26px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, #141414, #0d0d0d);
+      transition:transform var(--t), border-color var(--t), background var(--t);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .stat::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:2px;
+      background:linear-gradient(90deg, var(--yellow), transparent);
+      opacity:0;
+      transition:opacity var(--t);
+    }
+
+    .stat:hover{
+      transform:translateY(-4px);
+      border-color:var(--yellow-line);
+    }
+
+    .stat:hover::before{
+      opacity:1;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:2.1rem;
+      color:var(--yellow);
+      line-height:1;
+      margin-bottom:10px;
+      letter-spacing:-.03em;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.92rem;
+      display:block;
+    }
+
+    /* ============================================================
+       12. GRID DE CARDS
+       ============================================================ */
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:36px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:36px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:16px;
+      margin-top:36px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, var(--card-2), var(--card));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:30px;
+      transition:transform var(--t), border-color var(--t);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:var(--yellow-line);
+    }
+
+    .card h3{
+      font-size:1.45rem;
+      margin:0 0 10px;
+      letter-spacing:-.025em;
+    }
+
+    .card p{
+      color:var(--muted);
+      margin:0;
+      font-size:.98rem;
+    }
+
+    .card-icon{
+      width:46px;
+      height:46px;
+      border-radius:13px;
+      background:rgba(255,212,0,.10);
+      border:1px solid var(--yellow-line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--yellow);
+      font-weight:1000;
+      font-size:1.2rem;
+      margin-bottom:18px;
+    }
+
+    .tag{
+      display:inline-block;
+      margin-bottom:16px;
+      color:#111;
+      background:var(--yellow);
+      font-size:.72rem;
+      font-weight:1000;
+      padding:5px 10px;
+      border-radius:7px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+
+    /* ============================================================
+       13. TIMELINE
+       ============================================================ */
+    .timeline{
+      margin-top:50px;
+      position:relative;
+      padding-left:34px;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:9px;
+      top:6px;
+      bottom:6px;
+      width:2px;
+      background:linear-gradient(180deg, var(--yellow), rgba(255,212,0,.05));
+      border-radius:2px;
+    }
+
+    .timeline-item{
+      position:relative;
+      padding:0 0 34px 8px;
+    }
+
+    .timeline-item:last-child{
+      padding-bottom:0;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:-33px;
+      top:6px;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:#0b0b0b;
+      border:2px solid var(--yellow);
+      box-shadow:0 0 0 4px rgba(255,212,0,.09);
+      transition:box-shadow var(--t), background var(--t);
+    }
+
+    .timeline-item:hover::before{
+      background:var(--yellow);
+      box-shadow:0 0 0 7px rgba(255,212,0,.16);
+    }
+
+    .timeline-year{
+      display:inline-block;
+      font-weight:1000;
+      color:var(--yellow);
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:6px;
+    }
+
+    .timeline-item h3{
+      font-size:1.22rem;
+      margin:0 0 6px;
+      letter-spacing:-.02em;
+    }
+
+    .timeline-item p{
+      color:var(--muted);
+      margin:0;
+      max-width:720px;
+      font-size:.96rem;
+    }
+
+    /* ============================================================
+       14. FAIXA DE CITAÇÃO
+       ============================================================ */
+    .quote-strip{
+      margin-top:35px;
+      padding:26px 30px;
+      border-left:4px solid var(--yellow);
+      background:#0f0f0f;
+      border-radius:0 18px 18px 0;
+      color:#c9c9c9;
+      font-size:1rem;
+      position:relative;
+    }
+
+    .quote-strip::before{
+      content:"“";
+      position:absolute;
+      right:24px;
+      top:-6px;
+      font-size:5rem;
+      color:rgba(255,212,0,.12);
+      font-family:Georgia, serif;
+      line-height:1;
+    }
+
+    /* ============================================================
+       15. PILARES / VALORES
+       ============================================================ */
+    .pillar{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      background:linear-gradient(180deg, #131313, #0c0c0c);
+      transition:transform var(--t), border-color var(--t);
+    }
+
+    .pillar:hover{
+      transform:translateY(-4px);
+      border-color:var(--yellow-line);
+    }
+
+    .pillar-num{
+      font-size:.78rem;
+      font-weight:1000;
+      color:var(--yellow);
+      letter-spacing:.16em;
+      margin-bottom:14px;
+      display:block;
+    }
+
+    .pillar h4{
+      font-size:1.12rem;
+      margin:0 0 8px;
+      letter-spacing:-.02em;
+    }
+
+    .pillar p{
+      margin:0;
+      color:var(--muted-2);
+      font-size:.92rem;
+    }
+
+    /* ============================================================
+       16. FONTES
+       ============================================================ */
+    .sources{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:35px;
+    }
+
+    .source-card{
+      border:1px solid var(--line);
+      background:#101010;
+      border-radius:18px;
+      padding:24px;
+      min-height:190px;
+      display:flex;
+      flex-direction:column;
+      transition:transform var(--t), border-color var(--t), background var(--t);
+    }
+
+    .source-card:hover{
+      transform:translateY(-4px);
+      border-color:var(--yellow-line);
+      background:#141414;
+    }
+
+    .source-card strong{
+      font-size:1.1rem;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .source-card p{
+      color:var(--muted-2);
+      font-size:.92rem;
+      flex:1;
+      margin:0 0 14px;
+    }
+
+    .source-card a{
+      color:var(--yellow);
+      font-weight:900;
+      font-size:.92rem;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .source-card a:hover{
+      gap:11px;
+    }
+
+    .source-card a{
+      transition:gap var(--t);
+    }
+
+    /* ============================================================
+       17. FAQ
+       ============================================================ */
+    .faq{
+      margin-top:40px;
+      display:grid;
+      gap:12px;
+    }
+
+    details.faq-item{
+      border:1px solid var(--line);
+      border-radius:var(--radius-sm);
+      background:#0f0f0f;
+      padding:0;
+      overflow:hidden;
+      transition:border-color var(--t), background var(--t);
+    }
+
+    details.faq-item[open]{
+      border-color:var(--yellow-line);
+      background:#131313;
+    }
+
+    details.faq-item summary{
+      cursor:pointer;
+      list-style:none;
+      padding:20px 24px;
+      font-weight:800;
+      font-size:1.02rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      transition:color var(--t);
+    }
+
+    details.faq-item summary::-webkit-details-marker{
+      display:none;
+    }
+
+    details.faq-item summary:hover{
+      color:var(--yellow);
+    }
+
+    details.faq-item summary::after{
+      content:"+";
+      font-size:1.5rem;
+      font-weight:400;
+      color:var(--yellow);
+      line-height:1;
+      transition:transform var(--t);
+      flex-shrink:0;
+    }
+
+    details.faq-item[open] summary::after{
+      transform:rotate(45deg);
+    }
+
+    .faq-answer{
+      padding:0 24px 22px;
+      color:var(--muted);
+      font-size:.96rem;
+      max-width:900px;
+    }
+
+    /* ============================================================
+       18. GALERIA
+       ============================================================ */
+    .gallery{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      grid-template-rows:220px 220px;
+      gap:14px;
+      margin-top:40px;
+    }
+
+    .gallery-item{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#0d0d0d;
+    }
+
+    .gallery-item:first-child{
+      grid-row:span 2;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .6s ease, filter var(--t);
+      filter:grayscale(30%) brightness(.85);
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.06);
+      filter:grayscale(0%) brightness(1);
+    }
+
+    .gallery-caption{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:16px;
+      background:linear-gradient(180deg, transparent, rgba(0,0,0,.88));
+      font-size:.82rem;
+      font-weight:800;
+      color:#e6e6e6;
+      letter-spacing:.02em;
+    }
+
+    .gallery-placeholder{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100%;
+      color:#3a3a3a;
+      font-weight:1000;
+      font-size:.8rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      background:repeating-linear-gradient(45deg, #0e0e0e 0 14px, #121212 14px 28px);
+      text-align:center;
+      padding:20px;
+    }
+
+    /* ============================================================
+       19. CTA
+       ============================================================ */
+    .cta{
+      padding:70px 0;
+    }
+
+    .cta-box{
+      background:var(--yellow);
+      color:#090909;
+      border-radius:var(--radius-lg);
+      padding:46px;
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-80px;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      background:rgba(0,0,0,.06);
+    }
+
+    .cta-box::after{
+      content:"";
+      position:absolute;
+      right:40px;
+      bottom:-110px;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:rgba(0,0,0,.05);
+    }
+
+    .cta-box h2{
+      font-size:clamp(2rem, 4vw, 3.5rem);
+      line-height:1;
+      margin:0 0 12px;
+      letter-spacing:-.05em;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta-box p{
+      margin:0;
+      max-width:700px;
+      color:#2d2d2d;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta-box .btn{
+      border-color:#111;
+      background:#111;
+      color:#fff;
+      white-space:nowrap;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta-box .btn:hover{
+      background:#000;
+    }
+
+    /* ============================================================
+       20. RODAPÉ
+       ============================================================ */
+    footer{
+      padding:52px 0 60px;
+      color:var(--muted-3);
+      border-top:1px solid var(--line-2);
+      font-size:.9rem;
+      background:#060606;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.6fr 1fr 1fr;
+      gap:40px;
+      align-items:flex-start;
+    }
+
+    .footer-brand{
+      font-weight:1000;
+      letter-spacing:-1.2px;
+      font-size:1.25rem;
+      color:#eee;
+      margin-bottom:12px;
+      display:block;
+    }
+
+    .footer-brand span{
+      color:var(--yellow);
+    }
+
+    .disclaimer{
+      max-width:640px;
+      line-height:1.7;
+    }
+
+    .footer-col h4{
+      color:#ddd;
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .footer-col ul{
+      display:grid;
+      gap:9px;
+    }
+
+    .footer-col a{
+      color:var(--muted-3);
+    }
+
+    .footer-col a:hover{
+      color:var(--yellow);
+    }
+
+    .footer-bottom{
+      margin-top:40px;
+      padding-top:24px;
+      border-top:1px solid var(--line-2);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      font-size:.82rem;
+      color:#5f5f5f;
+    }
+
+    .social{
+      color:var(--yellow);
+      font-weight:900;
+    }
+
+    /* ============================================================
+       21. BACK TO TOP
+       ============================================================ */
+    .to-top{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:var(--yellow);
+      color:#090909;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.3rem;
+      font-weight:1000;
+      box-shadow:0 14px 34px rgba(255,212,0,.28);
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(14px);
+      transition:opacity var(--t), transform var(--t), visibility var(--t);
+      z-index:800;
+    }
+
+    .to-top.is-visible{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    .to-top:hover{
+      background:var(--yellow-2);
+      transform:translateY(-3px);
+    }
+
+    /* ============================================================
+       22. ANIMAÇÕES DE ENTRADA
+       ============================================================ */
+    .reveal{
+      opacity:0;
+      transform:translateY(26px);
+      transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+      will-change:opacity, transform;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .reveal-delay-1{transition-delay:.08s}
+    .reveal-delay-2{transition-delay:.16s}
+    .reveal-delay-3{transition-delay:.24s}
+    .reveal-delay-4{transition-delay:.32s}
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    @keyframes floatY{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+    }
+
+    @keyframes glow{
+      0%,100%{box-shadow:0 0 0 0 rgba(255,212,0,.35)}
+      50%{box-shadow:0 0 0 14px rgba(255,212,0,0)}
+    }
+
+    /* ============================================================
+       23. RESPONSIVO
+       ============================================================ */
+    @media (max-width:1024px){
+      .grid-4{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-col:last-child{
+        grid-column:1 / -1;
+      }
+    }
+
+    @media (max-width:900px){
+      :root{
+        --gutter:28px;
+      }
+
+      .navlinks{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:flex;
+      }
+
+      .mobile-menu{
+        display:block;
+      }
+
+      .topbar .btn-primary{
+        display:none;
+      }
+
+      .hero{
+        padding-top:70px;
+        min-height:auto;
+      }
+
+      .hero-grid,
+      .grid-2{
+        grid-template-columns:1fr;
+      }
+
+      .poster{
+        min-height:460px;
+      }
+
+      .stats{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .sources{
+        grid-template-columns:1fr;
+      }
+
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:200px 200px 200px;
+      }
+
+      .gallery-item:first-child{
+        grid-row:span 1;
+        grid-column:span 2;
+      }
+
+      .cta-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width:640px){
+      :root{
+        --gutter:24px;
+        --radius:18px;
+      }
+
+      nav.navbar{
+        height:68px;
+      }
+
+      .hero{
+        padding:56px 0 44px;
+      }
+
+      h1.hero-title{
+        font-size:3.5rem;
+      }
+
+      section{
+        padding:64px 0;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .grid-4{
+        grid-template-columns:1fr;
+      }
+
+      .poster{
+        min-height:400px;
+      }
+
+      .poster-number{
+        font-size:6rem;
+      }
+
+      .poster-copy h2{
+        font-size:2.15rem;
+      }
+
+      .poster-copy{
+        left:22px;
+        right:22px;
+        bottom:26px;
+      }
+
+      .cta-box{
+        padding:30px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .footer-col:last-child{
+        grid-column:auto;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+        grid-template-rows:repeat(4, 200px);
+      }
+
+      .gallery-item:first-child{
+        grid-column:span 1;
+      }
+
+      .to-top{
+        right:14px;
+        bottom:14px;
+        width:46px;
+        height:46px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,
+      *::before,
+      *::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+        scroll-behavior:auto !important;
+      }
+
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       BARRA DE PROGRESSO
+       ============================================================ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       TOPBAR
+       ============================================================ -->
+  <header class="topbar" id="topbar">
+    <div class="container">
+      <nav class="navbar" aria-label="Navegação principal">
+
+        <a href="#inicio" class="brand" aria-label="RESETBRASIL, voltar ao início">
+          RESET<span>BRASIL</span>
+          <i class="brand-dot" aria-hidden="true"></i>
+        </a>
+
+        <div class="navlinks" id="navlinks">
+          <a href="#inicio" class="nav-link">Início</a>
+          <a href="#renan" class="nav-link">Renan Santos</a>
+          <a href="#missao" class="nav-link">Partido Missão</a>
+          <a href="#trajetoria" class="nav-link">Trajetória</a>
+          <a href="#fontes" class="nav-link">Fontes</a>
+          <a href="#faq" class="nav-link">Dúvidas</a>
+        </div>
+
+        <a class="btn btn-primary btn-sm" href="#fontes">Conheça as fontes</a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </nav>
+    </div>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#renan">Renan Santos</a></li>
+          <li><a href="#missao">Partido Missão</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
+          <li><a href="#pilares">Pilares</a></li>
+          <li><a href="#fontes">Fontes oficiais</a></li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <span class="eyebrow reveal">
+            <i class="eyebrow-dot" aria-hidden="true"></i>
+            Informação política • Brasil 2026
+          </span>
+
+          <h1 class="hero-title reveal reveal-delay-1">
+            CONHEÇA <span class="yellow">RENAN SANTOS</span> E O PARTIDO MISSÃO.
+          </h1>
+
+          <p class="lead reveal reveal-delay-2">
+            O RESETBRASIL reúne, em um só lugar, informações públicas sobre a trajetória de
+            Renan Santos, o Partido Missão, o Livro Amarelo e documentos de referência para
+            quem quer conhecer o projeto político e consultar as fontes originais.
+          </p>
+
+          <div class="hero-actions reveal reveal-delay-3">
+            <a class="btn btn-primary" href="#renan">Quem é Renan</a>
+            <a class="btn btn-ghost" href="#missao">Conheça o Missão</a>
+          </div>
+
+          <div class="hero-note reveal reveal-delay-4">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffd400" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 8h.01M11 12h1v4h1"></path>
+            </svg>
+            <span>Página independente. Não é site oficial de Renan Santos nem do Partido Missão.</span>
+          </div>
+        </div>
+
+        <!-- Poster com a foto -->
+        <div class="poster reveal reveal-delay-2" aria-label="Retrato de Renan Santos">
+          <img
+            class="poster-img"
+            src="https://i.pinimg.com/736x/f4/e0/a4/f4e0a4ffaa5cea881f657a9bf71eb982.jpg"
+            alt="Retrato de Renan Santos"
+            loading="eager"
+            decoding="async"
+          />
+
+          <div class="poster-number" aria-hidden="true">14</div>
+
+          <div class="poster-badge">
+            <i class="eyebrow-dot" aria-hidden="true"></i>
+            Partido Missão
+          </div>
+
+          <div class="poster-copy">
+            <small>RESETBRASIL</small>
+            <h2>INFORMAÇÃO.<br>PROPOSTAS.<br>FONTES.</h2>
+            <p>Conheça a trajetória, o programa e os canais oficiais antes de compartilhar qualquer informação.</p>
+          </div>
+
+          <span class="poster-credit">Imagem ilustrativa</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MARQUEE
+         ============================================================ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Renan Santos <span>•</span></span>
+        <span class="marquee-item">Partido Missão <span>•</span></span>
+        <span class="marquee-item">Livro Amarelo <span>•</span></span>
+        <span class="marquee-item">Eleições 2026 <span>•</span></span>
+        <span class="marquee-item">Fontes oficiais <span>•</span></span>
+        <span class="marquee-item">Transparência <span>•</span></span>
+        <span class="marquee-item">Checagem <span>•</span></span>
+
+        <span class="marquee-item">Renan Santos <span>•</span></span>
+        <span class="marquee-item">Partido Missão <span>•</span></span>
+        <span class="marquee-item">Livro Amarelo <span>•</span></span>
+        <span class="marquee-item">Eleições 2026 <span>•</span></span>
+        <span class="marquee-item">Fontes oficiais <span>•</span></span>
+        <span class="marquee-item">Transparência <span>•</span></span>
+        <span class="marquee-item">Checagem <span>•</span></span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         QUEM É RENAN SANTOS
+         ============================================================ -->
+    <section id="renan">
+      <div class="container">
+
+        <div class="section-kicker reveal">Quem é</div>
+        <h2 class="section-title reveal reveal-delay-1">Renan Santos</h2>
+
+        <p class="section-copy reveal reveal-delay-2">
+          Renan Antonio Ferreira dos Santos é empresário e ativista político, conhecido por sua
+          atuação no Movimento Brasil Livre (MBL) e, posteriormente, na construção do Partido
+          Missão. Em 2026, sua candidatura à Presidência foi oficializada pelo partido e
+          registrada perante a Justiça Eleitoral.
+        </p>
+
+        <div class="stats">
+          <div class="stat reveal">
+            <strong data-count="1984" data-suffix="">1984</strong>
+            <span>Ano de nascimento informado em registros públicos.</span>
+          </div>
+          <div class="stat reveal reveal-delay-1">
+            <strong data-count="2014">2014</strong>
+            <span>Período em que ganhou projeção nacional com o MBL.</span>
+          </div>
+          <div class="stat reveal reveal-delay-2">
+            <strong data-count="2025">2025</strong>
+            <span>Ano em que o TSE deferiu o registro do Partido Missão.</span>
+          </div>
+          <div class="stat reveal reveal-delay-3">
+            <strong data-count="2026">2026</strong>
+            <span>Candidatura presidencial oficializada pelo Partido Missão.</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">01</div>
+            <span class="tag">Perfil</span>
+            <h3>Empresário e ativista</h3>
+            <p>
+              Antes da política institucional, Renan Santos construiu trajetória no
+              empreendedorismo e no ativismo digital, com participação em movimentos de
+              mobilização cívica e pautas ligadas a liberdade econômica e combate à corrupção.
+            </p>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <div class="card-icon" aria-hidden="true">02</div>
+            <span class="tag">Atuação</span>
+            <h3>Movimento Brasil Livre</h3>
+            <p>
+              No MBL, ganhou projeção nacional a partir de 2014, participando de mobilizações
+              políticas e de uma comunicação voltada ao público jovem e às redes sociais.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">03</div>
+            <span class="tag">Projeto</span>
+            <h3>Partido Missão</h3>
+            <p>
+              A construção do Partido Missão marca uma nova etapa: transformar a mobilização
+              digital em estrutura partidária com programa, estatuto e disputa eleitoral.
+            </p>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <div class="card-icon" aria-hidden="true">04</div>
+            <span class="tag">2026</span>
+            <h3>Candidatura presidencial</h3>
+            <p>
+              A chapa presidencial de 2026 foi oficializada pelo partido, com Aroldo Medina
+              como vice. Informações sobre a campanha devem ser conferidas nos canais oficiais.
+            </p>
+          </article>
+        </div>
+
+        <div class="quote-strip reveal">
+          <strong style="color:#ffd400">Importante:</strong>
+          esta página é um resumo informativo independente. Sempre confirme datas, números e
+          declarações diretamente nos canais oficiais do partido, da candidatura e no site do
+          Tribunal Superior Eleitoral.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PARTIDO MISSÃO
+         ============================================================ -->
+    <section id="missao">
+      <div class="container">
+
+        <div class="section-kicker reveal">Partido</div>
+        <h2 class="section-title reveal reveal-delay-1">Partido Missão</h2>
+
+        <p class="section-copy reveal reveal-delay-2">
+          O Partido Missão teve seu registro deferido pelo Tribunal Superior Eleitoral em
+          novembro de 2025. Para conhecer o programa, o estatuto e as posições oficiais do
+          partido, o ideal é consultar diretamente os canais partidários e os documentos
+          disponibilizados à Justiça Eleitoral.
+        </p>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <span class="tag">Institucional</span>
+            <h3>Registro partidário</h3>
+            <p>
+              O TSE deferiu o registro do estatuto e do órgão de direção nacional do Partido
+              Missão em sessão realizada em 4 de novembro de 2025.
+            </p>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <span class="tag">Programa</span>
+            <h3>Livro Amarelo</h3>
+            <p>
+              O plano apresentado pela candidatura em 2026 é identificado como “Livro Amarelo”,
+              documento usado pelo partido para organizar suas diretrizes e propostas.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="tag">Campanha 2026</span>
+            <h3>Candidatura presidencial</h3>
+            <p>
+              Em agosto de 2026, o Missão oficializou a candidatura de Renan Santos à
+              Presidência, com Aroldo Medina como vice na chapa.
+            </p>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <span class="tag">Transparência</span>
+            <h3>Confira antes de compartilhar</h3>
+            <p>
+              Informações sobre propostas, declarações e decisões eleitorais podem mudar.
+              Sempre compare esta página com a Justiça Eleitoral e os canais oficiais.
+            </p>
+          </article>
+        </div>
+
+        <div class="quote-strip reveal">
+          Este layout foi pensado para divulgação informativa. Se o RESETBRASIL for uma página
+          de apoiadores, mantenha a identificação “página independente” em local visível para
+          evitar confusão com os canais oficiais da campanha.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRAJETÓRIA / TIMELINE
+         ============================================================ -->
+    <section id="trajetoria">
+      <div class="container">
+
+        <div class="section-kicker reveal">Linha do tempo</div>
+        <h2 class="section-title reveal reveal-delay-1">Trajetória em ordem</h2>
+
+        <p class="section-copy reveal reveal-delay-2">
+          Um resumo cronológico para facilitar o entendimento da trajetória pública. Datas e
+          marcos devem ser confirmados nas fontes originais antes de qualquer compartilhamento.
+        </p>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">1984</span>
+            <h3>Nascimento</h3>
+            <p>
+              Ano de nascimento informado em registros públicos disponíveis sobre Renan
+              Antonio Ferreira dos Santos.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2014</span>
+            <h3>Projeção nacional</h3>
+            <p>
+              Participação em mobilizações cívicas que ganharam destaque no país e
+              impulsionaram sua presença no debate público.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2015 — 2020</span>
+            <h3>Ativismo e comunicação</h3>
+            <p>
+              Atuação contínua em movimentos políticos, produção de conteúdo e articulação
+              com pautas de liberdade econômica e transparência.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2025</span>
+            <h3>Registro do Partido Missão</h3>
+            <p>
+              O Tribunal Superior Eleitoral deferiu o registro do estatuto e do órgão de
+              direção nacional do Partido Missão em 4 de novembro de 2025.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2026</span>
+            <h3>Livro Amarelo e campanha</h3>
+            <p>
+              Apresentação do plano identificado como “Livro Amarelo” e oficialização da
+              candidatura presidencial, com Aroldo Medina como vice.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">Depois</span>
+            <h3>Acompanhe as fontes</h3>
+            <p>
+              Novas informações, pesquisas e decisões eleitorais devem ser acompanhadas
+              diretamente nos canais oficiais e no site do TSE.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PILARES
+         ============================================================ -->
+    <section id="pilares">
+      <div class="container">
+
+        <div class="section-kicker reveal">Organização</div>
+        <h2 class="section-title reveal reveal-delay-1">Como ler este conteúdo</h2>
+
+        <p class="section-copy reveal reveal-delay-2">
+          Para entender qualquer projeto político sem ruído, vale separar o que é
+          institucional, o que é programa e o que é campanha. Estes quatro blocos ajudam a
+          organizar a leitura.
+        </p>
+
+        <div class="grid-4">
+          <article class="pillar reveal">
+            <span class="pillar-num">PILAR 01</span>
+            <h4>Institucional</h4>
+            <p>
+              Registro, estatuto, diretrizes e documentos formais depositados na Justiça
+              Eleitoral.
+            </p>
+          </article>
+
+          <article class="pillar reveal reveal-delay-1">
+            <span class="pillar-num">PILAR 02</span>
+            <h4>Programa</h4>
+            <p>
+              O conjunto de propostas e diretrizes apresentado publicamente pelo partido e
+              pela candidatura.
+            </p>
+          </article>
+
+          <article class="pillar reveal reveal-delay-2">
+            <span class="pillar-num">PILAR 03</span>
+            <h4>Campanha</h4>
+            <p>
+              Agenda, materiais, declarações e movimentações próprias do período eleitoral.
+            </p>
+          </article>
+
+          <article class="pillar reveal reveal-delay-3">
+            <span class="pillar-num">PILAR 04</span>
+            <h4>Checagem</h4>
+            <p>
+              Verificação de dados, comparação de fontes e checagem antes de repassar
+              qualquer informação.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALERIA
+         ============================================================ -->
+    <section id="galeria">
+      <div class="container">
+
+        <div class="section-kicker reveal">Visual</div>
+        <h2 class="section-title reveal reveal-delay-1">Galeria</h2>
+
+        <p class="section-copy reveal reveal-delay-2">
+          Espaço reservado para imagens licenciadas ou autorizadas. Substitua os blocos
+          tracejados por fotos oficiais quando houver autorização de uso.
+        </p>
+
+        <div class="gallery">
+          <figure class="gallery-item reveal">
+            <img
+              src="https://i.pinimg.com/736x/f4/e0/a4/f4e0a4ffaa5cea881f657a9bf71eb982.jpg"
+              alt="Renan Santos em retrato"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="gallery-caption">Renan Santos • retrato</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal reveal-delay-1">
+            <div class="gallery-placeholder">Espaço para imagem autorizada</div>
+            <figcaption class="gallery-caption">Partido Missão</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal reveal-delay-2">
+            <div class="gallery-placeholder">Espaço para imagem autorizada</div>
+            <figcaption class="gallery-caption">Livro Amarelo</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal reveal-delay-3">
+            <div class="gallery-placeholder">Espaço para imagem autorizada</div>
+            <figcaption class="gallery-caption">Campanha 2026</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal reveal-delay-4">
+            <div class="gallery-placeholder">Espaço para imagem autorizada</div>
+            <figcaption class="gallery-caption">Mobilização</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FONTES
+         ============================================================ -->
+    <section id="fontes">
+      <div class="container">
+
+        <div class="section-kicker reveal">Consulte diretamente</div>
+        <h2 class="section-title reveal reveal-delay-1">Fontes oficiais e de referência</h2>
+
+        <p class="section-copy reveal reveal-delay-2">
+          Use os links abaixo como destino principal para documentos, atualizações da campanha
+          e informações institucionais.
+        </p>
+
+        <div class="sources">
+
+          <article class="source-card reveal">
+            <strong>Site da candidatura</strong>
+            <p>Informações, programa e canais ligados à candidatura de Renan Santos.</p>
+            <a href="https://www.renanpresidente.com.br/" target="_blank" rel="noopener noreferrer">
+              Abrir site →
+            </a>
+          </article>
+
+          <article class="source-card reveal reveal-delay-1">
+            <strong>Partido Missão</strong>
+            <p>Canal partidário para informações institucionais, participação e materiais oficiais.</p>
+            <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">
+              Abrir partido →
+            </a>
+          </article>
+
+          <article class="source-card reveal reveal-delay-2">
+            <strong>Tribunal Superior Eleitoral</strong>
+            <p>Fonte para dados de registro partidário, candidaturas, estatutos e informações eleitorais.</p>
+            <a href="https://www.tse.jus.br/" target="_blank" rel="noopener noreferrer">
+              Abrir TSE →
+            </a>
+          </article>
+
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">✓</div>
+            <h3>Confirme o registro</h3>
+            <p>
+              Consulte o sistema de partidos do TSE para verificar número, estatuto e
+              composição da direção nacional.
+            </p>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <div class="card-icon" aria-hidden="true">★</div>
+            <h3>Leia o programa</h3>
+            <p>
+              Procure o documento oficial do programa e compare com resumos publicados em
+              redes sociais.
+            </p>
+          </article>
+
+          <article class="card reveal reveal-delay-2">
+            <div class="card-icon" aria-hidden="true">!</div>
+            <h3>Desconfie de prints</h3>
+            <p>
+              Capturas de tela podem ser editadas. Priorize vídeos completos e publicações
+              nos canais oficiais.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section id="faq">
+      <div class="container">
+
+        <div class="section-kicker reveal">Perguntas frequentes</div>
+        <h2 class="section-title reveal reveal-delay-1">Dúvidas rápidas</h2>
+
+        <p class="section-copy reveal reveal-delay-2">
+          Respostas curtas para as perguntas mais comuns de quem chega até aqui pela primeira vez.
+        </p>
+
+        <div class="faq">
+
+          <details class="faq-item reveal">
+            <summary>Esta página é oficial?</summary>
+            <div class="faq-answer">
+              Não. O RESETBRASIL é uma página independente e informativa. Ela não representa
+              oficialmente Renan Santos, sua campanha ou o Partido Missão. O objetivo é
+              organizar informações públicas e direcionar para as fontes originais.
+            </div>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Quem é Renan Santos?</summary>
+            <div class="faq-answer">
+              Renan Antonio Ferreira dos Santos é empresário e ativista político, conhecido
+              pela atuação no Movimento Brasil Livre (MBL) e pela construção do Partido
+              Missão, que teve seu registro deferido pelo TSE em novembro de 2025.
+            </div>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>O que é o Partido Missão?</summary>
+            <div class="faq-answer">
+              É a legenda criada a partir da mobilização política liderada por Renan Santos.
+              O partido teve registro deferido pelo Tribunal Superior Eleitoral em 4 de
+              novembro de 2025 e passou a disputar eleições a partir de então.
+            </div>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>O que é o Livro Amarelo?</summary>
+            <div class="faq-answer">
+              É o nome pelo qual é identificado o plano apresentado pela candidatura em 2026.
+              O documento reúne diretrizes e propostas que o partido usa para organizar seu
+              programa. Para ler o conteúdo completo, procure os canais oficiais.
+            </div>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Posso usar as imagens desta página?</summary>
+            <div class="faq-answer">
+              As imagens exibidas aqui são usadas de forma ilustrativa. Antes de reutilizar
+              qualquer foto ou material, verifique a licença e obtenha autorização do autor
+              ou do detentor dos direitos.
+            </div>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Como faço para acompanhar as atualizações?</summary>
+            <div class="faq-answer">
+              Acompanhe os canais oficiais do partido e da candidatura, além do site do
+              Tribunal Superior Eleitoral, que concentra as informações formais sobre
+              registros, candidaturas e prestações de contas.
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+         ============================================================ -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>RESETBRASIL</h2>
+            <p>
+              Transforme sua página em um ponto de acesso organizado para biografia,
+              documentos e fontes. Troque os links de redes sociais no código pelos perfis
+              corretos da sua página.
+            </p>
+          </div>
+          <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            Ver Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ
+       ============================================================ -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <span class="footer-brand">RESET<span>BRASIL</span></span>
+          <div class="disclaimer">
+            <strong style="color:#ddd">Aviso:</strong> RESETBRASIL é uma página independente e
+            não representa oficialmente Renan Santos, sua campanha ou o Partido Missão.
+            Conteúdo destinado a apresentar informações públicas e direcionar o visitante às
+            fontes originais.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#renan">Renan Santos</a></li>
+            <li><a href="#missao">Partido Missão</a></li>
+            <li><a href="#trajetoria">Trajetória</a></li>
+            <li><a href="#fontes">Fontes</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links externos</h4>
+          <ul>
+            <li>
+              <a href="https://www.renanpresidente.com.br/" target="_blank" rel="noopener noreferrer">
+                Site da candidatura
+              </a>
+            </li>
+            <li>
+              <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">
+                Partido Missão
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tse.jus.br/" target="_blank" rel="noopener noreferrer">
+                Tribunal Superior Eleitoral
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear">2026</span> RESETBRASIL — página independente.</span>
+        <a class="social" href="#inicio">Voltar ao topo ↑</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <a href="#inicio" class="to-top" id="toTop" aria-label="Voltar ao topo">↑</a>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    (function(){
+      "use strict";
+
+      /* ------------------------------------------------------------
+         01. BARRA DE PROGRESSO DE LEITURA
+         ------------------------------------------------------------ */
+      var progressBar = document.getElementById("scrollProgress");
+
+      function updateProgress(){
+        if(!progressBar) return;
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = percent + "%";
+      }
+
+      /* ------------------------------------------------------------
+         02. TOPBAR COM FUNDO AO ROLAR
+         ------------------------------------------------------------ */
+      var topbar = document.getElementById("topbar");
+
+      function updateTopbar(){
+        if(!topbar) return;
+        if(window.scrollY > 12){
+          topbar.classList.add("is-scrolled");
+        }else{
+          topbar.classList.remove("is-scrolled");
+        }
+      }
+
+      /* ------------------------------------------------------------
+         03. BOTÃO VOLTAR AO TOPO
+         ------------------------------------------------------------ */
+      var toTop = document.getElementById("toTop");
+
+      function updateToTop(){
+        if(!toTop) return;
+        if(window.scrollY > 600){
+          toTop.classList.add("is-visible");
+        }else{
+          toTop.classList.remove("is-visible");
+        }
+      }
+
+      /* ------------------------------------------------------------
+         04. SCROLL LISTENER (com requestAnimationFrame)
+         ------------------------------------------------------------ */
+      var ticking = false;
+
+      function onScroll(){
+        if(!ticking){
+          window.requestAnimationFrame(function(){
+            updateProgress();
+            updateTopbar();
+            updateToTop();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener("scroll", onScroll, { passive:true });
+      window.addEventListener("resize", onScroll);
+
+      /* ------------------------------------------------------------
+         05. MENU MOBILE
+         ------------------------------------------------------------ */
+      var menuToggle = document.getElementById("menuToggle");
+      var mobileMenu = document.getElementById("mobileMenu");
+
+      function closeMenu(){
+        if(!menuToggle || !mobileMenu) return;
+        menuToggle.classList.remove("is-open");
+        mobileMenu.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menu");
+      }
+
+      function toggleMenu(){
+        if(!menuToggle || !mobileMenu) return;
+        var isOpen = mobileMenu.classList.toggle("is-open");
+        menuToggle.classList.toggle("is-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+      }
+
+      if(menuToggle){
+        menuToggle.addEventListener("click", toggleMenu);
+      }
+
+      if(mobileMenu){
+        mobileMenu.querySelectorAll("a").forEach(function(link){
+          link.addEventListener("click", closeMenu);
+        });
+      }
+
+      document.addEventListener("keydown", function(event){
+        if(event.key === "Escape"){
+          closeMenu();
+        }
+      });
+
+      /* ------------------------------------------------------------
+         06. REVELAÇÃO DE ELEMENTOS AO ROLAR
+         ------------------------------------------------------------ */
+      var revealElements = document.querySelectorAll(".reveal");
+
+      if("IntersectionObserver" in window){
+        var revealObserver = new IntersectionObserver(function(entries, observer){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold:0.12,
+          rootMargin:"0px 0px -60px 0px"
+        });
+
+        revealElements.forEach(function(el){
+          revealObserver.observe(el);
+        });
+      }else{
+        revealElements.forEach(function(el){
+          el.classList.add("is-visible");
+        });
+      }
+
+      /* ------------------------------------------------------------
+         07. LINK ATIVO NO MENU CONFORME A SEÇÃO VISÍVEL
+         ------------------------------------------------------------ */
+      var sections = document.querySelectorAll("main section[id]");
+      var navLinks = document.querySelectorAll(".nav-link");
+
+      function setActiveLink(id){
+        navLinks.forEach(function(link){
+          var href = link.getAttribute("href") || "";
+          if(href === "#" + id){
+            link.classList.add("is-active");
+          }else{
+            link.classList.remove("is-active");
+          }
+        });
+      }
+
+      if("IntersectionObserver" in window && sections.length){
+        var sectionObserver = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              setActiveLink(entry.target.id);
+            }
+          });
+        }, {
+          rootMargin:"-45% 0px -50% 0px",
+          threshold:0
+        });
+
+        sections.forEach(function(section){
+          sectionObserver.observe(section);
+        });
+      }
+
+      /* ------------------------------------------------------------
+         08. ANO ATUAL NO RODAPÉ
+         ------------------------------------------------------------ */
+      var yearEl = document.getElementById("currentYear");
+      if(yearEl){
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      /* ------------------------------------------------------------
+         09. CONTADORES ANIMADOS (OPCIONAL)
+         ------------------------------------------------------------ */
+      var counters = document.querySelectorAll("[data-count]");
+
+      function animateCounter(el){
+        var target = parseInt(el.getAttribute("data-count"), 10);
+        if(isNaN(target)) return;
+
+        var duration = 1100;
+        var startTime = null;
+
+        function step(timestamp){
+          if(!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.floor(eased * target);
+          el.textContent = String(current);
+          if(progress < 1){
+            window.requestAnimationFrame(step);
+          }else{
+            el.textContent = String(target);
+          }
+        }
+
+        window.requestAnimationFrame(step);
+      }
+
+      if("IntersectionObserver" in window && counters.length){
+        var counterObserver = new IntersectionObserver(function(entries, observer){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold:0.6 });
+
+        counters.forEach(function(el){
+          counterObserver.observe(el);
+        });
+      }
+
+      /* ------------------------------------------------------------
+         10. ROLAGEM SUAVE PARA LINKS INTERNOS (FALLBACK)
+         ------------------------------------------------------------ */
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+        anchor.addEventListener("click", function(event){
+          var targetId = this.getAttribute("href");
+          if(!targetId || targetId === "#") return;
+
+          var targetEl = document.querySelector(targetId);
+          if(!targetEl) return;
+
+          event.preventDefault();
+
+          var offset = 84;
+          var top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
+
+          window.scrollTo({
+            top: top,
+            behavior: "smooth"
+          });
+
+          if(history.replaceState){
+            history.replaceState(null, "", targetId);
+          }
+        });
+      });
+
+      /* ------------------------------------------------------------
+         11. INICIALIZAÇÃO
+         ------------------------------------------------------------ */
+      updateProgress();
+      updateTopbar();
+      updateToTop();
+
+    })();
+  </script>
+
+</body>
+</html>
